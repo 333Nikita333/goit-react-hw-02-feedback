@@ -16,6 +16,17 @@ export const Button = styled.button`
   cursor: pointer;
   outline: none;
   color: #ffffff;
-  background-color: #0009b7;
+  background-color: ${props => {
+    switch (props.children) {
+      case 'Good':
+        return 'green';
+      case 'Neutral':
+        return '#ADD100';
+      case 'Bad':
+        return 'red';
+      default:
+        return 'white';
+    }
+  }};
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
